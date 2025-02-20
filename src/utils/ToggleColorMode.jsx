@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React,{useState, useMemo, createContext} from 'react';
 import { ThemeProvider,createTheme } from '@mui/material/styles';
 
@@ -22,7 +23,7 @@ const ToggleColorMode = ({ children }) => {
             mode,
         },
     }),[mode]);
- 
+
     return (
         <ColorModeContext.Provider value={{ mode, setMode,toggleColorMode }}>
             <ThemeProvider theme={theme}>
