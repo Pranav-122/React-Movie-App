@@ -1,5 +1,4 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable no-unused-vars */
+
 import React, { useEffect } from 'react';
 import { Typography,Button,Box } from '@mui/material';
 import { useSelector } from 'react-redux';
@@ -19,7 +18,7 @@ const Profile = () => {
     useEffect(() => {
         refetchFavorites();
         refetchWatchlisted();
-    },[]);
+    },[refetchFavorites, refetchWatchlisted]);
  
     const logout = () => {
         localStorage.clear();
@@ -27,29 +26,28 @@ const Profile = () => {
     }
 
     return (
-       <Box>
-        <Box display="flex" justifyContent="space-between" >
-            <Typography variant='h6' gutterBottom> My Profile </Typography>
-            <Button color='inherit' onClick={logout}>
-               Logout &nbsp; <ExitToApp/>
-            </Button>
-        </Box>
-
-        {!favoriteMovies?.results?.length && !watchlistMovies?.results?.length
-        ? <Typography variant='h5'> Add Favorites or watchlist some movies to see them here 
-        </Typography>
-        : (
-            <Box>
-             <RatedCards title='Favorite Movies' data={favoriteMovies} />
-             <RatedCards title='WatchList Movies' data={watchlistMovies} />
+        <Box>
+            <Box display="flex" justifyContent="space-between" >
+                <Typography variant='h6' gutterBottom> My Profile </Typography>
+                
+                <Button color='inherit' onClick={logout}>
+                   Logout &nbsp; <ExitToApp/>
+                </Button>
             </Box>
-        )
-         
-        }
-
+            {!favoriteMovies?.results?.length && !watchlistMovies?.results?.length
+            ? <Typography variant='h5'> Add Favorites or watchlist some movies to see them here 
+            </Typography>
+            : (
+                <Box>
+                 <RatedCards title='Favorite Movies' data={favoriteMovies} />
+                 <RatedCards title='WatchList Movies' data={watchlistMovies} />
+                </Box>
+            )
+             
+            }
+        
+        </Box>
+        );
+    };
     
-    </Box>
-    );
-};
-
-export default Profile; 
+    export default Profile; 

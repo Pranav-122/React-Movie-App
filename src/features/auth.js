@@ -6,6 +6,7 @@ const initialState = {
     isAuthenticated: false,
     sessionId: '',
 };
+console.log(localStorage);
 
 const authSlice = createSlice({
     name: 'user',

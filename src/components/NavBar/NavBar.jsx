@@ -1,9 +1,8 @@
-/* eslint-disable no-undef */
-/* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
+
 import React, { useContext, useEffect, useState } from 'react';
 import { AppBar, IconButton, Toolbar, Drawer, Button, Avatar, useMediaQuery } from '@mui/material';
-import { Menu, AccountCircle, Brightness4, Brightness7 } from '@mui/icons-material';
+import { Menu, AccountCircle, Brightness4, Brightness7} from '@mui/icons-material';
 import { useTheme } from '@mui/material/styles';
 import useStyles from './navstyles';
 import { Link } from 'react-router-dom';
@@ -26,6 +25,7 @@ const NavBar = () => {
 
     const dispatch = useDispatch();
     const token = localStorage.getItem('request_token');
+    const sessionIdFromLocalStorage = localStorage.getItem('session_id');
 
     const colorMode = useContext(ColorModeContext);
 
