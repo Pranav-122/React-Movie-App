@@ -1,4 +1,3 @@
-/* eslint-disable import/no-anonymous-default-export */
 import action from './action.png';
 import adventure from './adventure.png';
 import animation from './animation.png';
@@ -18,9 +17,11 @@ import thriller from './thriller.png';
 import tvMovie from './tv movie.png';
 import war from './war.png';
 import western from './western.png';
+
 import popular from './popular.png';
 import topRated from './top rated.png';
 import upcoming from './upcoming.png';
+
 export default {
   action,
   adventure,
@@ -41,6 +42,7 @@ export default {
   'tv movie': tvMovie,
   war,
   western,
+
   popular,
   'top rated': topRated,
   upcoming,

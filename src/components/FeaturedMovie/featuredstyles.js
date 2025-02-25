@@ -1,9 +1,8 @@
-/* eslint-disable no-unused-vars */
 import { makeStyles } from "@mui/styles";
+// eslint-disable-next-line no-unused-vars
 import { width } from '@mui/system';
-
+ 
 export default makeStyles((theme) => ({
-        
     featuredCardContainer:{
         marginBottom: '20px',
         display: 'flex',
@@ -40,6 +39,6 @@ export default makeStyles((theme) => ({
         position: 'relative',
         backgroundColor: 'transparent'
     }
-
-
+     
+    
 }));

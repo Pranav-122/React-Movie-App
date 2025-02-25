@@ -1,6 +1,6 @@
-/* eslint-disable no-unused-vars */
 import { makeStyles } from "@mui/styles";
 
+// eslint-disable-next-line no-unused-vars
 const drawerWidth = 240;
 
 export default makeStyles((theme) => ({

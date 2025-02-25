@@ -1,8 +1,6 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-
 import React, { useContext, useEffect, useState } from 'react';
 import { AppBar, IconButton, Toolbar, Drawer, Button, Avatar, useMediaQuery } from '@mui/material';
-import { Menu, AccountCircle, Brightness4, Brightness7} from '@mui/icons-material';
+import { Menu, AccountCircle, Brightness4, Brightness7 } from '@mui/icons-material';
 import { useTheme } from '@mui/material/styles';
 import useStyles from './navstyles';
 import { Link } from 'react-router-dom';
@@ -13,14 +11,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setUser,userSelector } from '../../features/auth';
 import { ColorModeContext } from '../../utils/ToggleColorMode';
 
-
 const NavBar = () => {
 
     const classes = useStyles();
     const isMobile = useMediaQuery('(max-width:600px)');
     const theme = useTheme();
 
-    const { isAuthenticated, user} = useSelector(userSelector);    
+    const { isAuthenticated, user} = useSelector(userSelector);
+
     const [mobileOpen, setMobileOpen] = useState(false);
 
     const dispatch = useDispatch();
@@ -35,6 +33,7 @@ const NavBar = () => {
                 if (sessionIdFromLocalStorage) {
                     const {data: userData} = await moviesApi.get(`/account?session_id=${sessionIdFromLocalStorage}`); 
                     dispatch(setUser(userData));
+
                 }else{
                     const sessionId = await createSessionId();
                     const { data: userData } = await moviesApi.get(`/account?session_id=${sessionId}`);
@@ -43,7 +42,7 @@ const NavBar = () => {
             }
         };
         logInUser();
-    },[token]);
+    },[dispatch, sessionIdFromLocalStorage, token]);
 
     return (
         <>
@@ -61,10 +60,9 @@ const NavBar = () => {
                     </IconButton>
                 )}
             <IconButton color='inherit' sx={{ ml:1 }} onClick={colorMode.toggleColorMode}>
-            {theme.palette.mode === 'dark' ? <Brightness7/> : <Brightness4/>}
+                {theme.palette.mode === 'dark' ? <Brightness7/> : <Brightness4/>}
             </IconButton>
-            {!isMobile && <Search/>}
-
+                {!isMobile && <Search/>}
 
             <div>
                 {!isAuthenticated ? (

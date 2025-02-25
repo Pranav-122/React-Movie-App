@@ -9,7 +9,6 @@ import Profile from './components/Profile/Profile';
 import useStyles from './styles';
 import UseAlan from './Alan';
 
-
 const App = () => {
 
     const classes = useStyles();
@@ -32,7 +31,7 @@ const App = () => {
                 </main> 
                 <div ref={alanBtnContainer}/>
                 <UseAlan/>
-             </BrowserRouter>
+            </BrowserRouter>
             
         </div>
     );

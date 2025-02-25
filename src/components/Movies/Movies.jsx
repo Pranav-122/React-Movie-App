@@ -1,6 +1,6 @@
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { useGetMoviesQuery } from '../../services/TMDB';
+// eslint-disable-next-line no-unused-vars
 import { Box, CircularProgress, useMediaQuery, Typography } from '@mui/material';
 import MovieList from '../MovieList/MovieList';
 import { useSelector } from 'react-redux';

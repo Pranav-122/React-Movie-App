@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { makeStyles } from "@mui/styles";
  
 export default makeStyles(() => ({
@@ -7,7 +6,6 @@ export default makeStyles(() => ({
         borderRadius: '20px',
         objectFit: 'cover',
         boxShadow: '0.5em 0.5em 1em',    
-            
     },
     
    

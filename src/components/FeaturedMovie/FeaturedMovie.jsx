@@ -11,7 +11,7 @@ const FeaturedMovie = ({movie}) => {
 
     return (
         <Box component={Link} to={`/movie/${movie.id}`} className={classes.featuredCardContainer}>
-            <Card className={classes.card} classes={{ root:classes.cardRoot }}>
+    <Card className={classes.card} classes={{ root:classes.cardRoot }}>
         <CardMedia
         media="picture"
         alt={movie.title}

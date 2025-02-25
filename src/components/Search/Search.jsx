@@ -1,28 +1,32 @@
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { TextField, InputAdornment } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
+// eslint-disable-next-line no-unused-vars
 import { useDispatch, useSelector } from 'react-redux';
 import useStyles from './searchstyles';
 import { searchMovie } from '../../features/currentGenreOrCategory';
 import { useLocation } from 'react-router-dom';
+
+
 const Search = () => {
     const [query, setQuery] = useState('');
     const classes = useStyles();
     const dispatch = useDispatch();
     const location = useLocation();
-     
+   
     
     const handleKeyPress = (event) => {
         if (event.key === 'Enter') {
             dispatch(searchMovie(query));
         }
     };
+
     if (location.pathname !== '/') return null;  
+
     return (
         <div className={classes.searchContainer}>
             <TextField
-                onKeyUp = {handleKeyPress}
+                onKeyPress = {handleKeyPress}
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 variant='standard'
@@ -41,4 +45,5 @@ const Search = () => {
         </div>
     );
 };
+
 export default Search;

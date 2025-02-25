@@ -1,48 +1,34 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import { Typography, Button } from '@mui/material';
 import useStyles from './Pagistyles';
-const Pagination = ({ currentPage, setPage, totalPages }) => {
-    const classes = useStyles(); // Correct use of useStyles
+
+const Pagination = ({ currentPage,setPage,totalPages }) => {
+    const classes = useStyles();
 
     const handlePrev = () => {
-        if (currentPage > 1) {
-            setPage((prevPage) => prevPage - 1);
+        if (currentPage !== 1) {
+            setPage((prevPage) => prevPage - 1)
         }
-    };
+    }
 
     const handleNext = () => {
-        if (currentPage < totalPages) {
-            setPage((prevPage) => prevPage + 1);
+        if (currentPage !== totalPages) {
+            setPage((prevPage) => prevPage + 1)
         }
-    };
+    }
 
-    if (totalPages === 0) return null; // Handle no pages case
+    if (totalPages === 0) return null; 
 
     return (
-        <div className={classes.container}> {/* Correct className usage */}
-            <Button
-                onClick={handlePrev}
-                className={classes.button} // Correct className usage
-                variant='contained'
-                color="primary"
-                type='button'
-            >
-                Prev
-            </Button>
+        <div className={classes.container}>
+            <Button onClick={handlePrev} className={classes.button} variant='contained' color="primary" type='button'> Prev </Button>
+        
+        <Typography variant='h4' className={classes.pageNumber}>
+        {currentPage}
+        </Typography>
 
-            <Typography variant="h4" className={classes.pageNumber}> 
-                {currentPage} 
-            </Typography>
-
-            <Button
-                onClick={handleNext}
-                className={classes.button} // Correct className usage
-                variant='contained'
-                color="primary"
-                type='button' >
-                Next
-            </Button>
+            <Button onClick={handleNext} className={classes.button} variant='contained' color="primary" type='button'> Next </Button>
+           
         </div>
     );
 };
