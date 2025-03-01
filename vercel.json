@@ -1,0 +1,9 @@
+{
+    "regions": ["sfo1"],
+    "functions": {
+      "api/*": {
+        "maxDuration": 10
+      }
+    }
+  }
+  
