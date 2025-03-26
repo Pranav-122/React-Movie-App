@@ -27,8 +27,8 @@ const Movies = () => {
         return (
             <Box display="flex" alignItems="center" mt="20px">
                 <Typography variant='h4'>
-            No Moveis That Match the name <br />
-            Please search for somthing ele 
+            No Movies That Match the name <br />
+            Please search for somthing else 
                 </Typography>
             </Box>
         );
